@@ -65,14 +65,7 @@ const dataForRender = {
     attribute: tableAttributes
 }
 
-
 // Create new grid view with all parameter and atributes
 
 let gridView = new GridView();
-//gridView.header = 'Table of partner copanies!';
-//gridView.element = '.out-1';
-//gridView.headerClass = ['heder'];
-//gridView.tableClass = ['table'];
-// gridView.attribute = tableAttributes;
-// gridView.data = dataExample;
 gridView.render(dataForRender);

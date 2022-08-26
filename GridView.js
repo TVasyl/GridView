@@ -77,7 +77,6 @@ class GridView {
     setAttribute (attribute) {
         if (typeof attribute === 'object' && attribute != {}) {
             this._attribute = attribute;
-            
             return true;
         }
         return false;
@@ -96,15 +95,7 @@ class GridView {
         return false;
     }
 
-
-    /**
-     * Method for create of table
-     */
-
-    setTable (table) {
-        return table;
-    }
-
+   
     /**
      * Method for show GridViewTable
      */
@@ -142,10 +133,10 @@ class GridView {
             let thTabel = document.createElement('th');
             if (this._attribute[key].label) {
                 thTabel.textContent = this._attribute[key].label;
-            } 
-            else {thTabel.textContent = key;}
+            } else {
+                thTabel.textContent = key;
+            }
             tabHeader.append(thTabel);
-
         }
         table.append(tabHeader);
 
@@ -154,7 +145,6 @@ class GridView {
 
         for (let i = 0; i < this._data.length; i++) {
             let dataArr = this._data[i];
-            //console.log(dataArr);
             let tr = document.createElement('tr');
             for (let key in this._attribute) {
                 let td = document.createElement('td');
@@ -173,11 +163,7 @@ class GridView {
             table.append(tr);
         }
 
-        
-
         document.querySelector(this._element).append(table);
-        
-
         
     }
 }
