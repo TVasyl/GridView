@@ -24,7 +24,7 @@ class GridView {
      * Method set header
      */
 
-    set header(header) {
+    setHeader(header) {
         if (typeof header === 'string' && header.trim() != '') {
             this._header = header;
             return true;
@@ -36,7 +36,7 @@ class GridView {
      * Method set headerClass
      */
 
-    set headerClass(headerClass) {
+    setHeaderClass(headerClass) {
         if (typeof headerClass === 'object') {
             this._headerClass = headerClass;
             return true;
@@ -48,8 +48,8 @@ class GridView {
      * Method set tableClass
      */
 
-    set tableClass(tableClass) {
-        if (typeof tablerClass === 'object') {
+    setTableClass(tableClass) {
+        if (typeof tableClass === 'object') {
             this._tableClass = tableClass;
             return true;
         }
@@ -61,7 +61,7 @@ class GridView {
      * Method set element
      */
 
-    set element(element) {
+    setElement(element) {
         if (document.querySelector(element)) {
             this._element = element;
             return true;
@@ -74,7 +74,7 @@ class GridView {
      * Method set attributes
      */
 
-    set attribute (attribute) {
+    setAttribute (attribute) {
         if (typeof attribute === 'object' && attribute != {}) {
             this._attribute = attribute;
             
@@ -88,7 +88,7 @@ class GridView {
      * Method set data
      */
 
-    set data (data) {
+    setData (data) {
         if (typeof data === 'object' && data != {}) {
             this._data = data;
             return true;
@@ -96,11 +96,28 @@ class GridView {
         return false;
     }
 
+
+    /**
+     * Method for create of table
+     */
+
+    setTable (table) {
+        return table;
+    }
+
     /**
      * Method for show GridViewTable
      */
 
-    render() {
+    render(data) {
+        console.log(this.setElement(data.element));
+        this.setHeader(data.header);
+        this.setHeaderClass(data.headerClass);
+        this.setTableClass(data.tableClass);
+        this.setData(data.data);
+        this.setAttribute(data.attribute)
+
+
         //Show heder
         if (this._header) {
             let header = document.createElement('h1');

@@ -1,3 +1,8 @@
+
+const tableHeader = 'Table of partner companies!';
+const tableHeaderStyle = ['heder'];
+const elementForShow = '.out-1';
+const tableStyle = ['table'];
 // Data for table
 const dataExample = [
     {
@@ -51,15 +56,23 @@ const tableAttributes =  {
 };
 
 
+const dataForRender = {
+    element: elementForShow,
+    header: tableHeader,
+    headerClass: tableHeaderStyle,
+    tableClass: tableStyle,
+    data: dataExample,
+    attribute: tableAttributes
+}
 
 
 // Create new grid view with all parameter and atributes
 
 let gridView = new GridView();
-gridView.header = 'Table of partner copanies!';
-gridView.element = '.out-1';
-gridView.headerClass = ['heder'];
-gridView.tableClass = ['table'];
-gridView.attribute = tableAttributes;
-gridView.data = dataExample;
-gridView.render();
+//gridView.header = 'Table of partner copanies!';
+//gridView.element = '.out-1';
+//gridView.headerClass = ['heder'];
+//gridView.tableClass = ['table'];
+// gridView.attribute = tableAttributes;
+// gridView.data = dataExample;
+gridView.render(dataForRender);
